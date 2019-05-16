@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`First React component test with Enzyme renders without crashing 1`] = `
+<div
+  className="App"
+>
+  <header>
+    <h1>
+      Grocery List
+    </h1>
+  </header>
+  <main>
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/"
+    />
+  </main>
+</div>
+`;
+
+exports[`the Room List component renders on Landing should render correctly with no props 1`] = `
+<section
+  className="roomList"
+>
+  List of rooms will go here.
+</section>
+`;
+
+exports[`the Room List component renders on Landing should render the RoomList component 1`] = `
+<div
+  className="App"
+>
+  <header>
+    <h1>
+      Grocery List
+    </h1>
+  </header>
+  <main>
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/"
+    />
+  </main>
+</div>
+`;
+
+exports[`the Room List component renders on Landing should render the content from App.js 1`] = `
+<div
+  className="App"
+>
+  <header>
+    <h1>
+      Grocery List
+    </h1>
+  </header>
+  <main>
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/"
+    />
+  </main>
+</div>
+`;
