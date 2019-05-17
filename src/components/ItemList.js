@@ -28,12 +28,10 @@ class ItemList extends Component {
         return displayTime;
     }
 
-    /*
     checkUserName(name) {
         if(name == ''){return 'guest'}
         else {return name};
     }
-    */
 
     addItem(e){
         e.preventDefault();
@@ -46,7 +44,7 @@ class ItemList extends Component {
             description: newItem,
             roomId: this.props.currentRoomKey,
             sentAt: Date(this.props.firebase.database.ServerValue.TIMESTAMP),
-            username: "user"
+            username: this.checkUserName(this.props.user)
           });
 
         this.addForm.reset();

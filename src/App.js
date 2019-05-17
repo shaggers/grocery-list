@@ -4,6 +4,7 @@ import './App.css';
 import * as firebase from 'firebase';
 import RoomList from './components/RoomList';
 import ItemList from './components/ItemList';
+import User from './components/Users';
 
   // Set the configuration for your app
   const firebaseConfig = {
@@ -17,15 +18,14 @@ import ItemList from './components/ItemList';
   };
   firebase.initializeApp(firebaseConfig);
 
-  const database = firebase.database();
-
 class App extends React.Component {
   constructor(props){
     super(props)
 
     this.state = {
       currentRoom: '',
-      currentRoomKey: ''
+      currentRoomKey: '',
+      user: ''
     }
   }
 
@@ -34,12 +34,26 @@ class App extends React.Component {
     this.setState({ currentRoomKey: value.key })  
   }
 
+  setUser(name) {
+    if (name == null){
+      this.setState({ user: '' })
+    } else {
+      this.setState({ user: name.displayName });
+    }  
+  }
+
   render() {
     return (
       <div className="App">
           <header>
             <h1>Grocery List</h1>
+            <User 
+              firebase={firebase}
+              setUser={this.setUser.bind(this)}
+              user={this.state.user}
+            />
           </header>
+          <hr/>
           <main>
             <RoomList
               firebase={firebase}
@@ -49,6 +63,7 @@ class App extends React.Component {
                 firebase={firebase}
                 currentRoom={this.state.currentRoom}
                 currentRoomKey={this.state.currentRoomKey}
+                user={this.state.user}
             />
           </main>
       </div>
