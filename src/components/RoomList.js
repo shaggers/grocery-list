@@ -31,6 +31,10 @@ class RoomList extends React.Component {
         this.addForm.reset();
     }
 
+    handleClick(item) {
+        this.props.callbackFromParent(item);
+    }
+
     render() {
         return (
             <span>
@@ -57,7 +61,7 @@ class RoomList extends React.Component {
                 <ul>
                 {
                     this.state.rooms.map((room, index) =>
-                        <li className="room" key={index}> {room.name} </li>
+                        <li className="room" key={index} onClick={() => this.handleClick(room)}> {room.name} </li>
                     )
                 }
                 </ul>

@@ -3,6 +3,7 @@ import { Route, Link } from 'react-router-dom';
 import './App.css';
 import * as firebase from 'firebase';
 import RoomList from './components/RoomList';
+import ItemList from './components/ItemList';
 
   // Set the configuration for your app
   const firebaseConfig = {
@@ -19,6 +20,20 @@ import RoomList from './components/RoomList';
   const database = firebase.database();
 
 class App extends React.Component {
+  constructor(props){
+    super(props)
+
+    this.state = {
+      currentRoom: '',
+      currentRoomKey: ''
+    }
+  }
+
+  selectedRoom(value) {
+    this.setState({ currentRoom: value.name });
+    this.setState({ currentRoomKey: value.key })  
+  }
+
   render() {
     return (
       <div className="App">
@@ -28,6 +43,12 @@ class App extends React.Component {
           <main>
             <RoomList
               firebase={firebase}
+              callbackFromParent={this.selectedRoom.bind(this)}
+            />
+            <ItemList 
+                firebase={firebase}
+                currentRoom={this.state.currentRoom}
+                currentRoomKey={this.state.currentRoomKey}
             />
           </main>
       </div>
