@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-//import ToDo from './ToDo.js';
+import EditItem from './EditItem.js';
+import { isObjectTypeIndexer } from '@babel/types';
 
 class ItemList extends Component {
     constructor(props){
@@ -8,8 +9,7 @@ class ItemList extends Component {
         this.state = {
             todos: []
         }
-
-        //messages == todos
+        this._onEditClick = this._onEditClick.bind(this);
         this.todosRef = this.props.firebase.database().ref('todos');
     }
 
@@ -17,6 +17,7 @@ class ItemList extends Component {
         this.todosRef.orderByChild('sentAt').on('child_added', snapshot => {
             const item = snapshot.val();
             item.key = snapshot.key;
+            item.showEdit = false;
             this.setState({ todos : this.state.todos.concat(item) });
         });
     }
@@ -71,6 +72,39 @@ class ItemList extends Component {
         this.setState({todos: todos})
     }
 
+    _onEditClick(index) {
+        const todos = this.state.todos.slice();
+        const todo = todos[index];
+        todo.showEdit = true;
+        this.setState({
+          todos: todos
+        });
+    }
+
+    updateItem(index, e, editItem){
+        e.preventDefault();
+        const todos = this.state.todos.slice();
+        const todo = todos[index];
+        const todoKey = todo.key;
+        const editedItem = editItem.value;
+        if (editedItem === '') {return};
+        todo.description = editedItem
+        todo.showEdit = false;
+        let updates = {};
+        updates['/' + todoKey + '/description'] = editedItem;
+        this.todosRef.update(updates);
+        this.setState({ todos: todos });
+    }
+
+    cancelEdit(index){
+        const todos = this.state.todos.slice();
+        const todo = todos[index];
+        todo.showEdit = false;
+        this.setState({
+          todos: todos
+        });
+    }
+
     render(){
         return(
             <span>
@@ -92,7 +126,17 @@ class ItemList extends Component {
                         this.props.currentRoomKey == todo.roomId &&
                         <li>
                             <input type="checkbox" checked={ todo.isCompleted } onChange={ () => this.toggleComplete(index) }/>  
-                            <button onClick={ () => this.deleteItem(index)} > delete </button>                        
+                            <button onClick={ () => this.deleteItem(index)} > delete </button>  
+                            <button onClick={ () => this._onEditClick(index) }> edit </button>   
+                            {this.state.todos[index].showEdit ?
+                                <EditItem 
+                                updateItem = {this.updateItem.bind(this)}
+                                cancelEdit = {this.cancelEdit.bind(this)}
+                                index = {index}              
+                                /> 
+                            :
+                                null
+                            }                 
                             <p className="text-left float-left"><b>{todo.username}</b></p>
                             <p className="text-right"><small>{todo.sentAt}</small></p>
                             <span>{ todo.description }</span>
@@ -109,8 +153,8 @@ class ItemList extends Component {
                         <div>
                             <input ref={(input) => {this.newItem = input}} type="text" placeholder="text" id="newTodoInput"></input>
                         </div>
-                        <div className="col-2">
-                            <button type="submit" className="btn btn-outline-info btn-block">Send</button>
+                        <div>
+                            <button type="submit">Send</button>
                         </div>
                     </div>     
                 </form>
