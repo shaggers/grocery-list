@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render correctly Users component 1`] = `
+<span>
+  <span>
+    <p>
+      Signed in as 
+      guest
+    </p>
+    <button
+      onClick={[Function]}
+    >
+      Sign Out
+    </button>
+  </span>
+</span>
+`;

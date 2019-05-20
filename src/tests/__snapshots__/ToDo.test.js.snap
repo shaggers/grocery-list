@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render correctly text component 1`] = `
+<li>
+  <input
+    type="checkbox"
+  />
+  <span />
+</li>
+`;
+
+exports[`render correctly todo component 1`] = `
+<li>
+  <input
+    type="checkbox"
+  />
+  <span />
+</li>
+`;

@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render correctly RoomList component 1`] = `
+<span>
+  <section
+    className="roomList"
+  >
+    List of rooms will go here.
+  </section>
+  <hr />
+  <form
+    onSubmit={[Function]}
+  >
+    <label
+      htmlFor="newItemInput"
+    >
+      Add New Room
+    </label>
+    <div>
+      <div>
+        <input
+          id="newItemInput"
+          placeholder="text"
+          type="text"
+        />
+      </div>
+      <div>
+        <button
+          type="submit"
+        >
+          Add
+        </button>
+      </div>
+    </div>
+  </form>
+  <hr />
+  <ul />
+</span>
+`;

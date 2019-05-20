@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render correctly ItemList component 1`] = `
+<span>
+  <h2>
+    1
+  </h2>
+  <div
+    className="ItemList"
+  >
+    <ul />
+  </div>
+  <form
+    onSubmit={[Function]}
+  >
+    <label
+      htmlFor="newTodoInput"
+    >
+      New Item
+    </label>
+    <div>
+      <div>
+        <input
+          id="newTodoInput"
+          placeholder="text"
+          type="text"
+        />
+      </div>
+      <div>
+        <button
+          type="submit"
+        >
+          Send
+        </button>
+      </div>
+    </div>
+  </form>
+</span>
+`;

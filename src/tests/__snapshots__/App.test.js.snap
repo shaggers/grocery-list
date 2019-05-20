@@ -1,0 +1,232 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App component renders without crashing 1`] = `
+<div
+  className="App"
+>
+  <header>
+    <h1>
+      Grocery List
+    </h1>
+    <User
+      firebase={
+        Object {
+          "INTERNAL": Object {
+            "ErrorFactory": [Function],
+            "createFirebaseNamespace": [Function],
+            "createSubscribe": [Function],
+            "deepExtend": [Function],
+            "extendNamespace": [Function],
+            "factories": Object {
+              "auth": [Function],
+              "database": [Function],
+              "firestore": [Function],
+              "functions": [Function],
+            },
+            "node": Object {
+              "XMLHttpRequest": [Function],
+              "localStorage": Storage {},
+              "sessionStorage": Storage {},
+            },
+            "registerService": [Function],
+            "removeApp": [Function],
+            "useAsService": [Function],
+          },
+          "SDK_VERSION": "6.0.2",
+          "User": [Function],
+          "__esModule": true,
+          "app": [Function],
+          "apps": Array [
+            FirebaseAppImpl {
+              "INTERNAL": Object {
+                "addAuthTokenListener": [Function],
+                "getToken": [Function],
+                "getUid": [Function],
+                "removeAuthTokenListener": [Function],
+              },
+              "automaticDataCollectionEnabled_": false,
+              "firebase_": [Circular],
+              "isDeleted_": false,
+              "name_": "[DEFAULT]",
+              "options_": Object {
+                "apiKey": "AIzaSyDiMKeTwz7LgFfpPRNVc3dDQYH_A4e48Uo",
+                "appId": "1:833209511385:web:31f159d5098c2a96",
+                "authDomain": "grocery-list-1ed7b.firebaseapp.com",
+                "databaseURL": "https://grocery-list-1ed7b.firebaseio.com",
+                "messagingSenderId": "833209511385",
+                "projectId": "grocery-list-1ed7b",
+                "storageBucket": "grocery-list-1ed7b.appspot.com",
+              },
+              "services_": Object {
+                "auth": Object {
+                  "[DEFAULT]": Object {
+                    "apiKey": "AIzaSyDiMKeTwz7LgFfpPRNVc3dDQYH_A4e48Uo",
+                    "appName": "[DEFAULT]",
+                    "authDomain": "grocery-list-1ed7b.firebaseapp.com",
+                    "currentUser": null,
+                  },
+                },
+              },
+            },
+          ],
+          "auth": [Function],
+          "database": [Function],
+          "default": [Circular],
+          "firestore": [Function],
+          "functions": [Function],
+          "initializeApp": [Function],
+        }
+      }
+      setUser={[Function]}
+      user=""
+    />
+  </header>
+  <hr />
+  <main>
+    <RoomList
+      callbackFromParent={[Function]}
+      firebase={
+        Object {
+          "INTERNAL": Object {
+            "ErrorFactory": [Function],
+            "createFirebaseNamespace": [Function],
+            "createSubscribe": [Function],
+            "deepExtend": [Function],
+            "extendNamespace": [Function],
+            "factories": Object {
+              "auth": [Function],
+              "database": [Function],
+              "firestore": [Function],
+              "functions": [Function],
+            },
+            "node": Object {
+              "XMLHttpRequest": [Function],
+              "localStorage": Storage {},
+              "sessionStorage": Storage {},
+            },
+            "registerService": [Function],
+            "removeApp": [Function],
+            "useAsService": [Function],
+          },
+          "SDK_VERSION": "6.0.2",
+          "User": [Function],
+          "__esModule": true,
+          "app": [Function],
+          "apps": Array [
+            FirebaseAppImpl {
+              "INTERNAL": Object {
+                "addAuthTokenListener": [Function],
+                "getToken": [Function],
+                "getUid": [Function],
+                "removeAuthTokenListener": [Function],
+              },
+              "automaticDataCollectionEnabled_": false,
+              "firebase_": [Circular],
+              "isDeleted_": false,
+              "name_": "[DEFAULT]",
+              "options_": Object {
+                "apiKey": "AIzaSyDiMKeTwz7LgFfpPRNVc3dDQYH_A4e48Uo",
+                "appId": "1:833209511385:web:31f159d5098c2a96",
+                "authDomain": "grocery-list-1ed7b.firebaseapp.com",
+                "databaseURL": "https://grocery-list-1ed7b.firebaseio.com",
+                "messagingSenderId": "833209511385",
+                "projectId": "grocery-list-1ed7b",
+                "storageBucket": "grocery-list-1ed7b.appspot.com",
+              },
+              "services_": Object {
+                "auth": Object {
+                  "[DEFAULT]": Object {
+                    "apiKey": "AIzaSyDiMKeTwz7LgFfpPRNVc3dDQYH_A4e48Uo",
+                    "appName": "[DEFAULT]",
+                    "authDomain": "grocery-list-1ed7b.firebaseapp.com",
+                    "currentUser": null,
+                  },
+                },
+              },
+            },
+          ],
+          "auth": [Function],
+          "database": [Function],
+          "default": [Circular],
+          "firestore": [Function],
+          "functions": [Function],
+          "initializeApp": [Function],
+        }
+      }
+    />
+    <ItemList
+      currentRoom=""
+      currentRoomKey=""
+      firebase={
+        Object {
+          "INTERNAL": Object {
+            "ErrorFactory": [Function],
+            "createFirebaseNamespace": [Function],
+            "createSubscribe": [Function],
+            "deepExtend": [Function],
+            "extendNamespace": [Function],
+            "factories": Object {
+              "auth": [Function],
+              "database": [Function],
+              "firestore": [Function],
+              "functions": [Function],
+            },
+            "node": Object {
+              "XMLHttpRequest": [Function],
+              "localStorage": Storage {},
+              "sessionStorage": Storage {},
+            },
+            "registerService": [Function],
+            "removeApp": [Function],
+            "useAsService": [Function],
+          },
+          "SDK_VERSION": "6.0.2",
+          "User": [Function],
+          "__esModule": true,
+          "app": [Function],
+          "apps": Array [
+            FirebaseAppImpl {
+              "INTERNAL": Object {
+                "addAuthTokenListener": [Function],
+                "getToken": [Function],
+                "getUid": [Function],
+                "removeAuthTokenListener": [Function],
+              },
+              "automaticDataCollectionEnabled_": false,
+              "firebase_": [Circular],
+              "isDeleted_": false,
+              "name_": "[DEFAULT]",
+              "options_": Object {
+                "apiKey": "AIzaSyDiMKeTwz7LgFfpPRNVc3dDQYH_A4e48Uo",
+                "appId": "1:833209511385:web:31f159d5098c2a96",
+                "authDomain": "grocery-list-1ed7b.firebaseapp.com",
+                "databaseURL": "https://grocery-list-1ed7b.firebaseio.com",
+                "messagingSenderId": "833209511385",
+                "projectId": "grocery-list-1ed7b",
+                "storageBucket": "grocery-list-1ed7b.appspot.com",
+              },
+              "services_": Object {
+                "auth": Object {
+                  "[DEFAULT]": Object {
+                    "apiKey": "AIzaSyDiMKeTwz7LgFfpPRNVc3dDQYH_A4e48Uo",
+                    "appName": "[DEFAULT]",
+                    "authDomain": "grocery-list-1ed7b.firebaseapp.com",
+                    "currentUser": null,
+                  },
+                },
+              },
+            },
+          ],
+          "auth": [Function],
+          "database": [Function],
+          "default": [Circular],
+          "firestore": [Function],
+          "functions": [Function],
+          "initializeApp": [Function],
+        }
+      }
+      user=""
+    />
+  </main>
+</div>
+`;
