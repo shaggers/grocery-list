@@ -1,0 +1,114 @@
+.header { 
+    margin: 10px;
+}
+
+.title {
+    padding: 7% 53% 5% 0;
+}
+
+.titleContainer {
+    width: 100%;
+    align-content: center;
+    text-align: center;
+}
+
+.userController {
+    float: left;   
+}
+
+.User {
+    margin: 10px;
+}
+
+.userState {
+    float: left;
+}
+
+.userRow {
+    margin-top: 35px;
+    padding-left: 60px;   
+}
+
+.main{
+    position:absolute;
+    top: 24%;
+    bottom:0;
+    left:0;
+    right:0;
+    overflow:hidden;
+    border-top: 1px solid black;
+}
+
+.RoomList {
+    border-right: 1px solid black;
+    padding-top: 1%;
+    padding-left: 40px;
+}
+
+.roomForm {
+    padding: 10%;
+    width: 100%;
+}
+
+.addRoom {
+    width: 100%;
+}
+
+.ItemList {
+    padding-top: 3%;
+}
+
+.todos {
+    margin: 0% 3% 0% 3%;
+}
+
+.todoTitle {
+    padding-bottom: 20px;
+    padding-right: 18%;
+}
+
+.todoItem {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.newTodo {
+    width: 72%;
+    position: fixed;
+    bottom: 0;
+    padding-top: 10px;  
+}
+
+.todoDescription {
+    text-align: left;
+    padding-top: 10px;
+}
+
+.isPurchased {
+    margin-left: 15px; 
+}
+
+.editDelete {
+    text-align: right;
+    padding-top: 10px;
+}
+
+.editButton {
+    margin-right: 7px;
+    margin-top: 2px;
+}
+
+.deleteButton {
+    margin-left: 7px;
+    margin-top: 2px;
+}
+
+.todoUsername {
+    text-align: left;
+    padding-top: 15px;
+}
+
+.todoDate {
+    text-align: right;
+    padding-top: 20px;
+}

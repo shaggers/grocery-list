@@ -111,96 +111,69 @@ class ItemList extends Component {
 
             { 
                 this.props.currentRoom == '' &&
-                <h2>Select Conversation</h2> 
+                <h2 className="todoTitle">Select List</h2> 
             }
             { 
                 this.props.currentRoom != '' &&
-                <h2>{this.props.currentRoom}</h2>
+                <h2 className="todoTitle">{this.props.currentRoom}</h2>
             }
 
 
 
-            <div className="ItemList">
-                <ul>
+            <div className="">
+                <ul className="todos list-group">
                     { this.state.todos.map( (todo, index) => 
                         this.props.currentRoomKey == todo.roomId &&
-                        <li>
-                            <input type="checkbox" checked={ todo.isCompleted } onChange={ () => this.toggleComplete(index) }/>  
-                            <button onClick={ () => this.deleteItem(index)} > delete </button>  
-                            <button onClick={ () => this._onEditClick(index) }> edit </button>   
-                            {this.state.todos[index].showEdit ?
-                                <EditItem 
-                                updateItem = {this.updateItem.bind(this)}
-                                cancelEdit = {this.cancelEdit.bind(this)}
-                                index = {index}              
-                                /> 
-                            :
-                                null
-                            }                 
-                            <p className="text-left float-left"><b>{todo.username}</b></p>
-                            <p className="text-right"><small>{todo.sentAt}</small></p>
-                            <span>{ todo.description }</span>
+                        <li className="list-group-item">
+                            <div className="row">
+                                <div className="todoDescription col-sm-8 col-12">
+                                    <b className="">{ todo.description }</b>
+                                    <input className="isPurchased" type="checkbox" checked={ todo.isCompleted } onChange={ () => this.toggleComplete(index) }/>
+                                </div>
+                                <div className="editDelete col-sm-4 col-12">  
+                                    <button className="editButton btn btn-outline-success" onClick={ () => this._onEditClick(index) }> edit </button>
+                                    <button className="deleteButton btn btn-outline-success" onClick={ () => this.deleteItem(index)} > delete </button>  
+                                </div>
+                            </div> 
+
+                                {this.state.todos[index].showEdit ?
+                                    <EditItem 
+                                        updateItem = {this.updateItem.bind(this)}
+                                        cancelEdit = {this.cancelEdit.bind(this)}
+                                        index = {index}              
+                                        /> 
+                                    :                                
+                                        null
+                                }
+
+                            <div className="row">
+                                <div className="todoUsername col-6">                 
+                                    <p className="">{todo.username}</p>
+                                </div>
+                                <div className="todoDate col-6">
+                                    <p className=""><small>{todo.sentAt}</small></p>
+                                </div>
+                            </div>
                         </li>
-                        //<ToDo key={ index } description={ todo.description } isCompleted={ todo.isCompleted } />
+
                     )}
                 </ul>
             </div>
 
             { this.props.currentRoom !== '' && 
-                <form ref={(input) => {this.addForm = input}} onSubmit={(e) => {this.addItem(e)}}>
-                        <label htmlFor="newTodoInput">New Item</label>
-                    <div>
-                        <div>
-                            <input ref={(input) => {this.newItem = input}} type="text" placeholder="text" id="newTodoInput"></input>
+                <form className="newTodo form-control border border-success" ref={(input) => {this.addForm = input}} onSubmit={(e) => {this.addItem(e)}}>   
+                    <div className="form-row">
+                        <div className="col-10">
+                            <input className="form-control" ref={(input) => {this.newItem = input}} type="text" placeholder="text" id="newTodoInput"></input>
                         </div>
-                        <div>
-                            <button type="submit">Send</button>
+                        <div className="col-2">
+                            <button className="btn btn-block" type="submit">Add</button>
                         </div>
                     </div>     
                 </form>
             }            
 
             </span>
-
-            /*
-            <span>
-                { 
-                    this.props.currentRoom == '' &&
-                    <h2 className="border border-secondary">Select Conversation</h2> 
-                }
-                { 
-                    this.props.currentRoom != '' &&
-                    <h2 className="border border-secondary">{this.props.currentRoom}</h2>
-                }
-                        
-                <ul className="list-group">
-                    {
-                        this.state.messages.map((message, index) => 
-                                this.props.currentRoomKey == message.roomId && 
-                                <li className="list-group-item bg-dark">
-                                    <p className="text-left float-left"><b>{message.username}</b></p>
-                                    <p className="text-right"><small>{message.sentAt}</small></p>
-                                    <p className="text-left">{message.content}</p>  
-                                </li>
-                        )
-                    }
-                </ul>
-
-                { this.props.currentRoom !== '' && 
-                <form ref={(input) => {this.addForm = input}} className="form-control fixed-bottom bg-dark border-secondary w-100 mx-auto" onSubmit={(e) => {this.addItem(e)}}>
-                        <label htmlFor="newMessageInput" className="text-secondary">New Message</label>
-                    <div className="form-row">
-                        <div className="col-10">
-                            <input ref={(input) => {this.newItem = input}} type="text" placeholder="text" id="newMessageInput" className="form-control"></input>
-                        </div>
-                        <div className="col-2">
-                            <button type="submit" className="btn btn-outline-info btn-block">Send</button>
-                        </div>
-                    </div>     
-                </form>
-                }
-            </span>
-            */
            
         )
     }

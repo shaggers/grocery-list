@@ -39,7 +39,7 @@ it('render correctly ItemList component', () => {
 it("renders a todo item", () => {
     const component = Enzyme.mount(<ItemList fakeProp={"this is the fake prop"} />);
     console.log(component.props());
-    expect((component).prop('todos')).toEqual("guest");
+    expect((component).prop('fakeProp')).toEqual("guest");
 })
 */
 

@@ -26,20 +26,19 @@ class User extends Component {
 
     render() {
         return(
-            <span>
+            <span className="User">
                 { 
                     this.props.user == '' &&
-                        <span>
-                            <p>Signed in as Guest</p>
-                            <button onClick={() => this.handleSignIn()}>Sign In</button>
-                        </span>
+                        <div className="userRow row">
+                            <button type="button" className="UserButton col-5 btn btn-outline-success" onClick={() => this.handleSignIn()}>Sign In</button>
+                        </div>
                 }
                 { 
                     this.props.user != '' &&
-                        <span>
+                        <div className="userRow row">
                             <p>Signed in as {this.props.user}</p>
                             <button onClick={() => this.handleSignOut()}>Sign Out</button>
-                        </span> 
+                        </div> 
                 }          
             </span>
         )

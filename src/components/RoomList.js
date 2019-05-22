@@ -38,30 +38,22 @@ class RoomList extends React.Component {
     render() {
         return (
             <span>
-                <section className="roomList">
-                    List of rooms will go here.
-                </section>
 
-                <hr/>
-
-                <form ref={(input) => {this.addForm = input}} onSubmit={(e) => {this.addItem(e)}}>
-                        <label htmlFor="newItemInput">Add New Room</label>
-                    <div>
-                        <div>
-                            <input ref={(input) => {this.newItem = input}} type="text" placeholder="text" id="newItemInput"></input>
+                <form className="roomForm" ref={(input) => {this.addForm = input}} onSubmit={(e) => {this.addItem(e)}}>
+                    <div className="form-row">
+                        <div className="col-lg-8 col-7">
+                            <input className="addRoom form-control" ref={(input) => {this.newItem = input}} type="text" placeholder="text" id="newItemInput"></input>
                         </div>
-                        <div>
-                            <button type="submit">Add</button>
+                        <div className="col-lg-4 col-5">    
+                            <button className="form-control btn btn-outline-success" type="submit">Add</button>             
                         </div>
-                    </div>              
+                    </div>
                 </form>
 
-                <hr/>
-
-                <ul>
+                <ul className="list-group list-group-flush">
                 {
                     this.state.rooms.map((room, index) =>
-                        <li className="room" key={index} onClick={() => this.handleClick(room)}> {room.name} </li>
+                        <li className="todoItem list-group-item" key={index} onClick={() => this.handleClick(room)}> {room.name} </li>
                     )
                 }
                 </ul>

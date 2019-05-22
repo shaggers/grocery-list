@@ -5,6 +5,7 @@ import * as firebase from 'firebase';
 import RoomList from './components/RoomList';
 import ItemList from './components/ItemList';
 import User from './components/Users';
+import './style/app.css'
 
   // Set the configuration for your app
   const firebaseConfig = {
@@ -46,25 +47,40 @@ class App extends React.Component {
     return (
       <div className="App">
           <header>
-            <h1>Grocery List</h1>
-            <User 
-              firebase={firebase}
-              setUser={this.setUser.bind(this)}
-              user={this.state.user}
-            />
+            
+            <div className="header row">
+                <div className="userController col-md-5 col-6">
+                  <User 
+                    firebase={firebase}
+                    setUser={this.setUser.bind(this)}
+                    user={this.state.user}
+                  />
+                </div>
+
+                <div className="titleContainer col-md-7 col-6">
+                  <h1 className="title">Grocery List</h1>
+                </div>
+            </div>
+            
           </header>
-          <hr/>
+          
           <main>
-            <RoomList
-              firebase={firebase}
-              callbackFromParent={this.selectedRoom.bind(this)}
-            />
-            <ItemList 
-                firebase={firebase}
-                currentRoom={this.state.currentRoom}
-                currentRoomKey={this.state.currentRoomKey}
-                user={this.state.user}
-            />
+            <div className="main row">
+              <div className="RoomList col-md-3 col-sm-4 col-5">
+                <RoomList
+                  firebase={firebase}
+                  callbackFromParent={this.selectedRoom.bind(this)}
+                />
+              </div>           
+              <div className="ItemList col-md-9 col-sm-8 col-7">
+                <ItemList 
+                    firebase={firebase}
+                    currentRoom={this.state.currentRoom}
+                    currentRoomKey={this.state.currentRoomKey}
+                    user={this.state.user}
+                />
+              </div>
+            </div>
           </main>
       </div>
     );
