@@ -36,8 +36,7 @@ class User extends Component {
                 { 
                     this.props.user != '' &&
                         <div className="userRow row">
-                            <p>Signed in as {this.props.user}</p>
-                            <button onClick={() => this.handleSignOut()}>Sign Out</button>
+                            <button type="button" className="UserButton col-5 btn btn-outline-success" onClick={() => this.handleSignOut()}>Sign Out</button>
                         </div> 
                 }          
             </span>

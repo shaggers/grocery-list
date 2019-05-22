@@ -1,3 +1,9 @@
+# Grocery List Take Home Assignment
+
+###### By Cameron Lenartowich
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

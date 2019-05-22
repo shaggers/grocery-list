@@ -124,7 +124,7 @@ class ItemList extends Component {
                 <ul className="todos list-group">
                     { this.state.todos.map( (todo, index) => 
                         this.props.currentRoomKey == todo.roomId &&
-                        <li className="list-group-item">
+                        <li className="todoItem list-group-item">
                             <div className="row">
                                 <div className="todoDescription col-sm-8 col-12">
                                     <b className="">{ todo.description }</b>
@@ -161,13 +161,13 @@ class ItemList extends Component {
             </div>
 
             { this.props.currentRoom !== '' && 
-                <form className="newTodo form-control border border-success" ref={(input) => {this.addForm = input}} onSubmit={(e) => {this.addItem(e)}}>   
+                <form className="newTodo" ref={(input) => {this.addForm = input}} onSubmit={(e) => {this.addItem(e)}}>   
                     <div className="form-row">
                         <div className="col-10">
-                            <input className="form-control" ref={(input) => {this.newItem = input}} type="text" placeholder="text" id="newTodoInput"></input>
+                            <input className="inputTodo form-control" ref={(input) => {this.newItem = input}} type="text" placeholder="text" id="newTodoInput"></input>
                         </div>
                         <div className="col-2">
-                            <button className="btn btn-block" type="submit">Add</button>
+                            <button className="btn btn-block btn-outline-success" type="submit">Add</button>
                         </div>
                     </div>     
                 </form>

@@ -53,7 +53,7 @@ class RoomList extends React.Component {
                 <ul className="list-group list-group-flush">
                 {
                     this.state.rooms.map((room, index) =>
-                        <li className="todoItem list-group-item" key={index} onClick={() => this.handleClick(room)}> {room.name} </li>
+                        <li className="roomItem list-group-item" key={index} onClick={() => this.handleClick(room)}> {room.name} </li>
                     )
                 }
                 </ul>

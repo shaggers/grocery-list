@@ -1,9 +1,14 @@
+body {
+    background-color: black;
+}
+
 .header { 
     margin: 10px;
 }
 
 .title {
     padding: 7% 53% 5% 0;
+    color: white;
 }
 
 .titleContainer {
@@ -36,11 +41,11 @@
     left:0;
     right:0;
     overflow:hidden;
-    border-top: 1px solid black;
+    border-top: 1px solid green;
 }
 
 .RoomList {
-    border-right: 1px solid black;
+    border-right: 1px solid green;
     padding-top: 1%;
     padding-left: 40px;
 }
@@ -52,6 +57,8 @@
 
 .addRoom {
     width: 100%;
+    background-color: black;
+    border: 1px solid grey;
 }
 
 .ItemList {
@@ -65,9 +72,13 @@
 .todoTitle {
     padding-bottom: 20px;
     padding-right: 18%;
+    color: white;
 }
 
-.todoItem {
+.roomItem {
+    background-color: black;
+    color: white;
+    border-top: 1px solid green;
     padding-top: 20px;
     padding-bottom: 20px;
 }
@@ -76,7 +87,10 @@
     width: 72%;
     position: fixed;
     bottom: 0;
-    padding-top: 10px;  
+    padding-top: 10px; 
+    margin-bottom: 10px; 
+    background-color: black;
+    color: white; 
 }
 
 .todoDescription {
@@ -111,4 +125,38 @@
 .todoDate {
     text-align: right;
     padding-top: 20px;
+}
+
+.todoItem {
+    background-color: black;
+    color: white;
+    border: 1px solid green;
+}
+
+.inputTodo {
+    background-color: black;
+    border: 1px solid grey;
+}
+
+.editItemRow {
+    margin-top: 20px;
+}
+
+.editInput {
+    background-color: black;
+    border: 1px solid grey;
+}
+
+.editForm {
+    background-color: black;
+    border: 1px solid grey;
+    width: 400px;
+}
+
+.cancelButton {
+    margin-left: 12px;
+}
+
+.submitEditButton {
+    margin-left: 12px;
 }

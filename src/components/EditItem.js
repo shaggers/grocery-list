@@ -30,19 +30,21 @@ class EditItem extends Component {
 
 	render() {
 		return (
-            <div ref={this.setWrapperRef}>
-            <form ref={(input) => {this.editForm = input}} onSubmit={(e) => {this.props.updateItem(this.props.index, e, this.editItem)}}>
-                    <button onClick={ () => this.props.cancelEdit(this.props.index) } >cancel</button>
-                    <label htmlFor="editTodoInput">Edit Item</label>
-                    <div>
-                        <div>
-                            <input ref={(input) => {this.editItem = input}} type="text" placeholder="text" id="editTodoInput"></input>
-                        </div>
-                        <div>
-                            <button type="submit">Submit</button>
-                        </div>
-                    </div>     
-            </form>
+            <div className="editItemRow row" ref={this.setWrapperRef}>
+                <div className="col-sm-6"></div>
+                <div className="editItem col-sm-6">
+                    <form className="editForm form-control" ref={(input) => {this.editForm = input}} onSubmit={(e) => {this.props.updateItem(this.props.index, e, this.editItem)}}>
+                            <div className="input-group">
+                                <div>
+                                    <input className="editInput form-control" ref={(input) => {this.editItem = input}} type="text" placeholder="text" id="editTodoInput"></input>
+                                </div>
+                                <div>
+                                    <button className="cancelButton btn btn-outline-success" onClick={ () => this.props.cancelEdit(this.props.index) } >Cancel</button>
+                                    <button className="submitEditButton btn btn-outline-success" type="submit">Submit</button>
+                                </div>
+                            </div>     
+                    </form>
+                </div>
             </div>
 		);
 	}
