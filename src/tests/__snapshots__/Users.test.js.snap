@@ -1,17 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`render correctly Users component 1`] = `
-<span>
-  <span>
-    <p>
-      Signed in as 
-      guest
-    </p>
+<span
+  className="User"
+>
+  <div
+    className="userRow row"
+  >
     <button
+      className="UserButton col-5 btn btn-outline-success"
       onClick={[Function]}
+      type="button"
     >
       Sign Out
     </button>
-  </span>
+  </div>
 </span>
 `;
